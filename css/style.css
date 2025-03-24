@@ -843,7 +843,7 @@ i::before,i::after{
    color: #fff;
 }
 .center-brand.fixedmenu .navbar-nav .nav-link {
-   color: #212331;
+   /* color: #212331; */
 }
 .navbar-nav .nav-link:hover,
 .navbar-nav .nav-link:focus,
@@ -1389,6 +1389,19 @@ i::before,i::after{
    .sidebar-nav .social-icons{
       display: none;
    }
+}
+.navbar {
+   background-color: white !important;  /* Change the background to white */
+   transition: background-color 0.3s ease;
+}
+
+/* For the menu items to be visible on white background */
+.navbar .nav-link {
+   color: black !important;  /* Set menu text color to black */
+}
+
+.navbar .nav-link:hover {
+   color: #007bff !important;  /* Add hover effect */
 }
 
 /*-------------------------------*/
