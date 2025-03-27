@@ -15,6 +15,10 @@
 <base href="/shashwatha-groups-website/">
 
 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
 </head>
 <body data-bs-spy="scroll" data-bs-target="#xenav">
 
@@ -43,21 +47,26 @@
 </div>
 <!--PreLoader Ends-->
 
+<!-- header --><!-- header -->
 <!-- header -->
 <header class="site-header">
-   <nav class="navbar navbar-expand-lg center-brand static-nav"  >
+   <nav class="navbar navbar-expand-lg center-brand static-nav">
       <div class="container">
          <a class="navbar-brand" href="index.html">
-         <img src="./img/download-removebg-preview (1).png" alt="logo" class="logo-default">
-         <img src="./img/Shashwatha Groups Logo 2024.png" alt="logo" class="logo-scrolled" style="height: 70px; width: 70px;">
+            <img src="./img/download-removebg-preview (1).png" alt="logo" class="logo-default">
+            <img src="./img/Shashwatha Groups Logo 2024.png" alt="logo" class="logo-scrolled" style="height: 70px; width: 70px;">
          </a>
-         <button class="navbar-toggler navbar-toggler-right collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#xenav">
-            <span> </span>
-            <span> </span>
-            <span> </span>
+         
+         <!-- Mobile Toggle Button - Always visible dark icon -->
+         <button class="navbar-toggler dark-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#xenav" aria-controls="xenav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
          </button>
-         <div class="collapse navbar-collapse" id="xenav">
-            <ul class="navbar-nav" id="container">
+         
+         <div class="collapse navbar-collapse mobile-menu" id="xenav">
+            <!-- Close button for mobile menu -->
+            <button class="btn-close-mobile" id="closeMobileMenu">✕</button>
+            
+            <ul class="navbar-nav">
                <li class="nav-item">
                   <a class="nav-link pagescroll" href="#banner-main">Home</a>
                </li>
@@ -82,22 +91,22 @@
                   <a class="nav-link pagescroll" href="#features">Services</a>
                </li>
                <li class="nav-item">
-                  <a class="nav-link pagescroll" href="#contactus">contact  </a>
+                  <a class="nav-link pagescroll" href="#contactus">contact</a>
                </li>
             </ul>
          </div>
       </div>
 
-      <!--side menu open button-->
+      <!-- Side menu toggle button - visible on desktop only -->
       <a href="javascript:void(0)" class="d-none d-lg-inline-block sidemenu_btn" id="sidemenu_toggle">
-          <span></span> <span></span> <span></span>
-       </a>
+         <span></span> <span></span> <span></span>
+      </a>
    </nav>
 
-   <!-- side menu -->
+   <!-- Side menu -->
    <div class="side-menu">
       <div class="inner-wrapper">
-         <span class="btn-close" id="btn_sideNavClose"><i></i><i></i></span>
+         <span class="btn-close" id="btn_sideNavClose">✕</span>
          <nav class="side-nav w-100">
             <ul class="navbar-nav">
                <li class="nav-item">
@@ -137,9 +146,197 @@
          </div>
       </div>
    </div>
-   <a id="close_side_menu" href="javascript:void(0);"></a>
-   <!-- End side menu -->
+   <div class="menu-overlay" id="menuOverlay"></div>
 </header>
+<style>
+/* Dark always-visible menu icon */
+.dark-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 0, 0, 0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Mobile menu styles */
+@media (max-width: 991.98px) {
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 75%;
+    height: 100vh;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+    z-index: 1050;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    overflow-y: auto;
+  }
+  
+  .mobile-menu.show {
+    transform: translateX(0);
+  }
+  
+  .btn-close-mobile {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1051;
+    color: #333;
+  }
+  
+  .menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1040;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+  
+  .menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+/* Side menu close button */
+.btn-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #fff;
+}
+
+
+
+
+
+
+
+
+/* Ensure mobile menu is visible */
+.navbar-toggler {
+  border: none;
+  padding: 0.5rem;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  width: 1.5em;
+  height: 1.5em;
+}
+
+/* Mobile menu styles */
+@media (max-width: 991.98px) {
+  #xenav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 75%;
+    height: 100vh;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+    z-index: 1050;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+  
+  #xenav.show {
+    transform: translateX(0);
+  }
+  
+  .navbar-nav {
+    flex-direction: column !important;
+  }
+  
+  .nav-item {
+    margin: 10px 0;
+  }
+}
+
+/* Side menu styles */
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 75%;
+  height: 100%;
+  background: #333;
+  z-index: 1060;
+  transition: right 0.3s ease;
+}
+
+.side-menu.active {
+  right: 0;
+}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+
+
+
+// Mobile menu toggle
+document.querySelector('.navbar-toggler').addEventListener('click', function() {
+  document.getElementById('xenav').classList.toggle('show');
+});
+
+// Side menu toggle (for desktop)
+document.getElementById('sidemenu_toggle').addEventListener('click', function() {
+  document.querySelector('.side-menu').classList.add('active');
+});
+
+// Close side menu
+document.getElementById('btn_sideNavClose').addEventListener('click', function() {
+  document.querySelector('.side-menu').classList.remove('active');
+});
+
+// Close mobile menu when clicking outside
+// document.getElementById('close_side_menu').addEventListener('click', function() {
+//   document.getElementById('xenav').classList.remove('show');
+// });
+
+   
+// Mobile menu toggle
+document.querySelector('.navbar-toggler').addEventListener('click', function() {
+  document.getElementById('xenav').classList.add('show');
+  document.getElementById('menuOverlay').classList.add('active');
+});
+
+// Close mobile menu
+document.getElementById('closeMobileMenu').addEventListener('click', function() {
+  document.getElementById('xenav').classList.remove('show');
+  document.getElementById('menuOverlay').classList.remove('active');
+});
+
+// Close mobile menu when clicking overlay
+document.getElementById('menuOverlay').addEventListener('click', function() {
+  document.getElementById('xenav').classList.remove('show');
+  this.classList.remove('active');
+});
+
+// Side menu toggle (for desktop)
+document.getElementById('sidemenu_toggle').addEventListener('click', function() {
+  document.querySelector('.side-menu').classList.add('active');
+  document.getElementById('menuOverlay').classList.add('active');
+});
+
+// Close side menu
+document.getElementById('btn_sideNavClose').addEventListener('click', function() {
+  document.querySelector('.side-menu').classList.remove('active');
+  document.getElementById('menuOverlay').classList.remove('active');
+});
+</script>
+
 <!-- header -->
 
 <!--Main Slider-->
@@ -150,7 +347,9 @@
             <li data-index="rs-01" data-transition="fade" data-slotamount="default" data-easein="Power3.easeInOut" data-easeout="Power3.easeInOut" data-masterspeed="2000" data-fsmasterspeed="1500" class="rev_gradient">
 
                 <!-- MAIN IMAGE -->
-                <img src="./images/transparent.png" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-bgparallax="10"  data-no-retina>
+                <img src="./images/background1.jpg" alt="New Image" class="rev-slidebg">
+
+                <!-- <img src="./images/background.png" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-bgparallax="10"  data-no-retina> -->
                 <!-- LAYER NR. 1 -->
                 <div class="tp-caption tp-resizeme"
                   data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
@@ -1158,7 +1357,7 @@
 <!--Counters ends-->  
   
 <!-- Pricing Tables -->  
-<section id="our-pricings" class="padding bglight">
+<!-- <section id="our-pricings" class="padding bglight">
    <div class="container">
       <div class="row">
          <div class="col-md-8 offset-md-2 col-sm-12 text-center">
@@ -1212,7 +1411,7 @@
          </div>
       </div>
    </div>
-</section>
+</section> -->
 <!--Pricing Tables ends-->
    
   
@@ -1520,8 +1719,8 @@
          <div class="col-md-12 col-sm-12 text-center">
             <ul class="social-icons bottom25 wow fadeInUp" data-wow-delay="300ms">
                <li><a href="javascript:void(0)"><i class="fa fa-facebook"></i> </a> </li>
-               <li><a href="javascript:void(0)"><i class="fa fa-twitter"></i> </a> </li>
-               <li><a href="javascript:void(0)"><i class="fa fa-google-plus"></i> </a> </li>
+               <!-- <li><a href="javascript:void(0)"><i class="fa fa-twitter"></i> </a> </li> -->
+               <!-- <li><a href="javascript:void(0)"><i class="fa fa-google-plus"></i> </a> </li> -->
                <li><a href="javascript:void(0)"><i class="fa fa-linkedin"></i> </a> </li>
                <li><a href="javascript:void(0)"><i class="fa fa-instagram"></i> </a> </li>
                <li><a href="javascript:void(0)"><i class="fa fa-envelope-o"></i> </a> </li>
