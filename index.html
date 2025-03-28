@@ -1049,6 +1049,19 @@ document.querySelectorAll('#xenav .nav-link').forEach(link => {
 
 
 
+/* Mobile View: Show one service per row */
+@media (max-width: 768px) {
+    .features-grid {
+        display: flex;
+        flex-direction: column; /* Stack items one below the other */
+        align-items: center; /* Center align items */
+    }
+
+    .feature-card {
+        width: 90%; /* Prevent full-width stretching */
+        max-width: 400px; /* Limit maximum size */
+    }
+}
 
         /* Features Section */
         .features {
