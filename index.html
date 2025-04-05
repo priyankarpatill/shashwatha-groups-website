@@ -135,9 +135,9 @@
 
          <div class="side-footer w-100">
             <ul class="social-icons-simple white top40">
-               <li><a href="javascript:void(0)"><i class="fa fa-facebook"></i></a></li>
-               <li><a href="javascript:void(0)"><i class="fa fa-instagram"></i></a></li>
-               <li><a href="javascript:void(0)"><i class="fa fa-twitter"></i></a></li>
+               <li><a href="https://www.facebook.com/profile.php?id=61550105577797 "><i class="fa fa-facebook"></i></a></li>
+               <li><a href="https://www.instagram.com/shashwatha_groups/?hl=en "><i class="fa fa-instagram"></i></a></li>
+               <!-- <li><a href="javascript:void(0)"><i class="fa fa-twitter"></i></a></li> -->
             </ul>
             <p class="whitecolor">&copy; 2021 Shashwatha Groups. Made With Love by Shashwatha Groups</p>
          </div>
@@ -2138,7 +2138,7 @@ document.addEventListener("DOMContentLoaded", function() {
                   <p class="bottom15">
 
 3rd Main Rd, Ganapathy Nagar, Peenya Industrial Area Phase IV, Peenya, Bengaluru,. </p>
-                  <a class="pickus" href="#." data-text="Get Directions">Get Directions</a>
+                  <!-- <a class="pickus" href="#." data-text="Get Directions">Get Directions</a> -->
                </div>
                <div class="col-md-6 col-sm-6 our-address top40">
                   <h5 class="bottom25">Our Phone</h5>
@@ -2158,10 +2158,11 @@ document.addEventListener("DOMContentLoaded", function() {
                <div class="col-md-6 col-sm-6 our-address top40">
                   <h5 class="bottom25">Our Support</h5>
                   <p class="bottom15">Main Support : sales.shashwathagoups@gmail.com
+                     <a href="https://docs.google.com/document/d/1QGUyyfkCqNM3yilrRNxGzXi4NNQ07UPmMQ6BmqmNtIc/edit?usp=drivesdk" target="_blank" style="color: #00bcd4; text-transform: uppercase; font-size: 13px; font-weight: 800;">Privacy Policy</a>
 
 
  <!-- <span>Sales : support@website</span> </p> -->
-                  <!-- <a class="pickus" href="#." data-text="Open a Ticket">Open a Ticket</a> -->
+                  <!-- <a class="pickus" href="https://docs.google.com/document/d/1QGUyyfkCqNM3yilrRNxGzXi4NNQ07UPmMQ6BmqmNtIc/edit?usp=drivesdk " data-text="Open a Ticket">Privacy Policy</a> -->
                </div>
             </div>
          </div>
@@ -2205,6 +2206,26 @@ document.addEventListener("DOMContentLoaded", function() {
       </div>
    </div>
 
+   <script>
+      document.getElementById("submit_btn").addEventListener("click", function () {
+          let firstName = document.getElementById("first_name").value;
+          let lastName = document.getElementById("last_name").value;
+          let email = document.getElementById("email").value;
+          let phone = document.getElementById("phone").value;
+          let message = document.getElementById("message").value;
+          
+          let formattedMessage = `Hello, I am ${firstName} ${lastName}.\nEmail: ${email}\nPhone: ${phone}\nMessage: ${message}`;
+          let encodedMessage = encodeURIComponent(formattedMessage);
+          
+          let whatsappNumber = "919600854209"; // Replace with the recipient's WhatsApp number
+          let whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+          
+          window.open(whatsappURL, "_blank");
+      });
+      </script>
+<script src="script.js"></script>
+      
+
    <!--Location Map here-->
 <!-- <div id="map-container"></div> -->
 </section>
@@ -2216,12 +2237,12 @@ document.addEventListener("DOMContentLoaded", function() {
       <div class="row">
          <div class="col-md-12 col-sm-12 text-center">
             <ul class="social-icons bottom25 wow fadeInUp" data-wow-delay="300ms">
-               <li><a href="javascript:void(0)"><i class="fa fa-facebook"></i> </a> </li>
+               <li><a href="https://www.facebook.com/profile.php?id=61550105577797 " ><i class="fa fa-facebook"></i> </a> </li>
                <!-- <li><a href="javascript:void(0)"><i class="fa fa-twitter"></i> </a> </li> -->
                <!-- <li><a href="javascript:void(0)"><i class="fa fa-google-plus"></i> </a> </li> -->
                <li><a href="javascript:void(0)"><i class="fa fa-linkedin"></i> </a> </li>
-               <li><a href="javascript:void(0)"><i class="fa fa-instagram"></i> </a> </li>
-               <li><a href="javascript:void(0)"><i class="fa fa-envelope-o"></i> </a> </li>
+               <li><a href="https://www.instagram.com/shashwatha_groups/?hl=en "><i class="fa fa-instagram"></i> </a> </li>
+               <li><a href="sales.shashwathagoups@gmail.com"><i class="fa fa-envelope-o"></i> </a> </li>
             </ul>
             <p class="copyrights wow fadeInUp" data-wow-delay="350ms"> &copy; 2025 Shashwatha Groups. made with love by <a href="https://www.shashwathagroups.com/" target="_blank">Shashwatha Groups</a> </p>
          </div>
