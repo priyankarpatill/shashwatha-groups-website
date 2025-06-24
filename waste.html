@@ -1,136 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website & Graphic Design Company</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        /* Reset styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive Header with Slide Menu</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    /* Header Styling */
+    .site-header {
+      background-color: #222;
+      padding: 20px 0;
+    }
 
-        /* Navbar styles */
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 50px;
-            position: absolute;
-            width: 100%;
-            top: 0;
-            left: 0;
-            z-index: 100;
-        }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+    }
 
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: white;
-        }
+    .navbar-brand img {
+      height: 60px;
+    }
 
-        .menu {
-            display: flex;
-            gap: 30px;
-        }
+    .navbar-toggler {
+      font-size: 28px;
+      color: white;
+      background: none;
+      border: none;
+      display: none;
+    }
 
-        .menu a {
-            text-decoration: none;
-            color: white;
-            font-size: 18px;
-            transition: 0.3s;
-        }
+    /* Desktop menu */
+    #xenav {
+      display: flex;
+      gap: 20px;
+    }
 
-        .menu a:hover {
-            color: #00bcd4;
-        }
+    #xenav .nav-link {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
 
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            background: linear-gradient(to right, #4b0082, #b33f62);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: white;
-            padding: 20px;
-        }
+    /* Mobile View */
+    @media (max-width: 991px) {
+      .navbar-toggler {
+        display: block;
+      }
 
-        .hero h1 {
-            font-size: 48px;
-            font-weight: bold;
-        }
+      #xenav {
+        display: none !important;
+      }
+    }
 
-        .hero p {
-            font-size: 20px;
-            margin: 10px 0;
-        }
+    /* Side Menu */
+    .side-menu {
+      position: fixed;
+      top: 0;
+      right: -300px;
+      width: 270px;
+      height: 100%;
+      background-color: #fff;
+      z-index: 9999;
+      transition: right 0.3s ease-in-out;
+      overflow-y: auto;
+      box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+    }
 
-        .hero .btn {
-            margin-top: 20px;
-            padding: 12px 24px;
-            background-color: #00bcd4;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 18px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
+    .side-menu.active {
+      right: 0;
+    }
 
-        .hero .btn:hover {
-            background-color: #0097a7;
-        }
+    .inner-wrapper {
+      padding: 30px 20px;
+    }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .navbar {
-                flex-direction: column;
-                text-align: center;
-            }
-            .menu {
-                margin-top: 10px;
-                flex-direction: column;
-                gap: 10px;
-            }
-            .hero h1 {
-                font-size: 36px;
-            }
-            .hero p {
-                font-size: 18px;
-            }
-        }
-    </style>
+    .btn-close {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    .side-menu .nav-link {
+      display: block;
+      color: #333;
+      font-size: 18px;
+      padding: 10px 0;
+      text-decoration: none;
+      border-bottom: 1px solid #eee;
+    }
+
+    /* Overlay */
+    #close_side_menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      display: none;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 9998;
+    }
+  </style>
 </head>
 <body>
 
-    <!-- Navigation -->
+  <!-- Header -->
+  <header class="site-header">
     <nav class="navbar">
-        <div class="logo">Shashwatha</div>
-        <div class="menu">
-            <a href="#">Home</a>
-            <a href="#">Features</a>
-            <a href="#">Team</a>
-            <a href="#">Portfolio</a>
-            <a href="#">Packages</a>
-            <a href="#">Clients</a>
-            <a href="#">Blog</a>
-            <a href="#">Contact</a>
-        </div>
+      <a class="navbar-brand" href="index.html">
+        <img src="./img/logo.png" alt="Logo" />
+      </a>
+      <button class="navbar-toggler" onclick="toggleMobileMenu()">☰</button>
+      <div class="collapse navbar-collapse" id="xenav">
+        <a class="nav-link" href="#banner-main">Home</a>
+        <a class="nav-link" href="#our-process">Features</a>
+        <a class="nav-link" href="#twocopies">About Us</a>
+        <a class="nav-link" href="#portfolio_top">Portfolio</a>
+        <a class="nav-link" href="#our-pricings">Packages</a>
+        <a class="nav-link" href="#our-testimonial">Clients</a>
+        <a class="nav-link" href="#features">Services</a>
+        <a class="nav-link" href="#contactus">Contact</a>
+      </div>
     </nav>
+  </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <h1>Cost Effective <br> <span style="color: #00bcd4;">Website And Graphic</span> Design Company</h1>
-        <p>The Best Multipurpose One Page Template in Market</p>
-        <button class="btn">LEARN MORE</button>
-    </section>
+  <!-- Side Mobile Menu -->
+  <div class="side-menu" id="mobileMenu">
+    <div class="inner-wrapper">
+      <span class="btn-close" id="btn_sideNavClose">×</span>
+      <nav class="side-nav">
+        <a class="nav-link" href="#banner-main">Home</a>
+        <a class="nav-link" href="#our-process">Features</a>
+        <a class="nav-link" href="#twocopies">About Us</a>
+        <a class="nav-link" href="#portfolio_top">Portfolio</a>
+        <a class="nav-link" href="#our-pricings">Packages</a>
+        <a class="nav-link" href="#our-testimonial">Clients</a>
+        <a class="nav-link" href="#features">Services</a>
+        <a class="nav-link" href="#contactus">Contact</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Background Overlay -->
+  <a id="close_side_menu" href="javascript:void(0);"></a>
+
+  <!-- JavaScript -->
+  <script>
+    function toggleMobileMenu() {
+      const menu = document.getElementById("mobileMenu");
+      const overlay = document.getElementById("close_side_menu");
+
+      menu.classList.toggle("active");
+      overlay.style.display = menu.classList.contains("active") ? "block" : "none";
+    }
+
+    document.getElementById("btn_sideNavClose").onclick = function () {
+      document.getElementById("mobileMenu").classList.remove("active");
+      document.getElementById("close_side_menu").style.display = "none";
+    };
+
+    document.getElementById("close_side_menu").onclick = function () {
+      document.getElementById("mobileMenu").classList.remove("active");
+      this.style.display = "none";
+    };
+  </script>
 
 </body>
 </html>

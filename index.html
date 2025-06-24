@@ -58,7 +58,7 @@
             <span class="hamburger-line"></span>
             <span class="hamburger-line"></span>
          </button>
-         
+         <!-- <button class="navbar-toggler hamburger-icon" onclick="toggleMobileMenu()" style="color: white;">☰</button> -->
          <!-- Main Navigation -->
          <div class="collapse navbar-collapse" id="xenav">
             <ul class="navbar-nav" id="container">
@@ -88,20 +88,23 @@
                <li class="nav-item">
                   <a class="nav-link pagescroll" href="#contactus">Contact</a>
                </li>
+              <li class="nav-item">
+      <a class="nav-link pagescroll" href="./careers.html">Careers</a>
+   </li>
             </ul>
          </div>
       </div>
 
       <!-- Side menu open button -->
       <a href="javascript:void(0)" class="d-none d-lg-inline-block sidemenu_btn" id="sidemenu_toggle">
-         <span class="sidemenu-line"></span>
+         <span class="sidemenu-line"  ></span>
          <span class="sidemenu-line"></span>
          <span class="sidemenu-line"></span>
       </a>
    </nav>
 
    <!-- Side menu -->
-   <div class="side-menu">
+   <div class="side-menu" style="color: black;">
       <div class="inner-wrapper">
          <span class="btn-close" id="btn_sideNavClose"><i></i><i></i></span>
          <nav class="side-nav w-100">
@@ -130,6 +133,10 @@
                <li class="nav-item">
                   <a class="nav-link pagescroll" href="#contactus">Contact</a>
                </li>
+               <li class="nav-item">
+      <a class="nav-link pagescroll" href="./careers.html">Careers</a>
+   </li>
+               
             </ul>
          </nav>
 
@@ -147,6 +154,7 @@
 </header>
 
 <style>
+   
 /* Hamburger Icon Styles */
 .hamburger-icon {
    display: none;
@@ -154,7 +162,8 @@
    justify-content: space-between;
    width: 30px;
    height: 21px;
-   background: transparent;
+   /* background: transparent; */
+   background: black;
    border: none;
    cursor: pointer;
    padding: 0;
@@ -305,6 +314,15 @@
    margin-top: 20px;
    font-size: 12px;
 }
+.hamburger-line {
+   display: block;
+   width: 25px;
+   height: 3px;
+   margin: 5px auto;
+   background-color: pink; /* 👈 This sets the color to pink */
+   transition: all 0.3s ease-in-out;
+}
+
 </style>
 
 <script>

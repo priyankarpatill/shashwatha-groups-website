@@ -955,6 +955,8 @@ i::before,i::after{
     -ms-transform: rotate(-135deg);
     transform: rotate(-135deg);
     opacity: 0.9;
+    color: black;
+ 
 }
 
 
