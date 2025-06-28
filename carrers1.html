@@ -362,14 +362,16 @@
 </head>
 <body>
 
- <section class="hero-grid">
+ <section class="hero-grid" style="background-color: #8B5CF6;">
   <div class="hero-text">
     <p class="welcome">- Hello and welcome -</p>
     <h1>Start Your Career <br><span class="highlight">in Outer Web</span></h1>
     <p class="subtitle">We are the people who dream & do.</p>
     <div class="btn-group">
-      <a href="#" class="btn btn-green">About us</a>
-      <a href="#" class="btn btn-outline">Vacancies</a>
+      <a href="./about.html" class="btn btn-green">About us</a>
+    <a href="#vacancy-card" class="btn btn-outline">Vacancies</a>
+
+      
     </div>
     <p class="hot-vacancies"><strong>Hot vacancies :</strong> UX Designer, JS Developer, iOS Developer, Product Manager</p>
   </div>
@@ -680,5 +682,47 @@
 
 
 </style>
+
+  <style>
+    body {
+      margin: 0;
+      cursor: none; /* Hide the default cursor */
+    }
+
+    .custom-cursor {
+      width: 24px;
+      height: 24px;
+      border: 1px solid black;
+      border-radius: 50%;
+      position: fixed;
+      pointer-events: none;
+      z-index: 9999;
+      transition: transform 0.1s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .custom-cursor::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background-color: black;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="custom-cursor" id="cursor"></div>
+
+  <script>
+    const cursor = document.getElementById('cursor');
+
+    document.addEventListener('mousemove', (e) => {
+      cursor.style.left = `${e.clientX - 12}px`; // 12 = half of cursor width
+      cursor.style.top = `${e.clientY - 12}px`;
+    });
+  </script>
 </body>
 </html>
