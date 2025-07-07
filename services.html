@@ -3,11 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Outer Web - Contacts</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<style>
-      body {
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+<link rel="stylesheet" href="./css/plugins.css">
+<link rel="stylesheet" href="./css/style.css">
+  <!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <title>About Outer Web</title>
+  <style>
+    body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
       background-color: #f8f9f7;
@@ -39,7 +44,7 @@
     }
 
     .about-header {
-      background-color: #18472b;
+      background-color: #8B5CF6;
       color: white;
       display: flex;
       justify-content: space-between;
@@ -152,7 +157,8 @@
   object-fit: cover;
 }
 
-</style>
+  </style>
+</head>
   <style>
     body {
       margin: 0;
@@ -195,18 +201,20 @@
     });
   </script>
 <body>
+
+  <!-- Header -->
   <header>
     <div class="top-bar">
-      <img src="./img/Shashwatha Groups Logo 2024.png" alt="Outer Web Logo" class="logo" style="height: 110px; width:140px;" />
+      <img src="./img/Shashwatha Groups Logo 2024.png" alt="Outer Web Logo" class="logo" style="height: 110px; width:130px;" />
       <nav class="nav-links">
         <a href="./index.html">Home</a>
         <a href="./about.html">About Us</a>
         
        <a href="./services.html">Services</a>
-         <a href="./contact.html">Contacts</a>
-         <a href="./carrers1.html">Careers</a>
+       <a href="./contact.html">Contacts</a>
+       <a href="./carrers1.html">Carrers</a>
         <!-- <a href="#">Our People</a> -->
-      
+        
       </nav>
       <div class="social-icons">
         <!-- <a href="#"><img src="youtube.png" alt="YouTube" /></a> -->
@@ -217,97 +225,111 @@
     </div>
   </header>
 
+  <!-- About Header -->
+  <section class="about-header">
+    <div class="about-left">
+      <h2>Services</h2>
+      <p><a href="./index.html">Home</a> > <strong>Services</strong></p>
+    </div>
+    <div class="about-right">
+      <!-- <p>
+        We’re a company that creates impactful design and technological solutions for our clients.
+        If you’re a good fit for one of our open roles, we’ll be reaching out to you.
+      </p> -->
+    </div>
+  </section>
 
-   <section class="services-section">
-  <div class="overlay"></div>
-  <div class="container">
-    <h2><span>Our</span> Services</h2>
-    <p class="intro">
-      We provide a wide range of security services tailored to your unique needs. Whether it's residential,
-      commercial, or event security — our trained professionals are ready to protect.
-    </p>
+<!--half img section-->
 
-    <div class="services">
-      <div class="service-box">
-        <h3>✔ Residential Security</h3>
-        <p>
-          Dedicated protection for your home and family. Our guards are trained to handle all home security concerns efficiently.
-        </p>
-      </div>
-      <div class="service-box">
-        <h3>✔ Commercial Surveillance</h3>
-        <p>
-          Monitor your office or business premises 24/7 with our advanced surveillance and guard solutions.
-        </p>
-      </div>
-      <div class="service-box">
-        <h3>✔ Event Security</h3>
-        <p>
-          Ensure smooth functioning of events with expert crowd control and on-site risk management services.
-        </p>
-      </div>
+
+<section class="features-section">
+    <h2 class="services-heading">Services</h2>
+  <div class="container1">
+    <div class="feature-card">
+      <img src="images/website.png" alt="Icon" class="icon" style="height: 90px; width: 90px;"/>
+      <h3>Website Design & Development</h3>
+      <p>We provide a website design service that delivers a modern
+and professional design, tailored to meet the unique needs
+of your business.</p>
+    </div>
+    <div class="feature-card">
+      <img src="images/app.png" alt="Icon" class="icon" style="height: 70px; width: 70px;"/>
+      <h3>App Development</h3>
+      <p>The process of app design and development is
+multifaceted, requiring a blend of creativity and
+technical skills.</p>
+    </div>
+    <div class="feature-card">
+      <img src="images/graphic.png" alt="Icon" class="icon" style="height: 90px; width: 90px;"/>
+      <h3>Graphic Design</h3>
+      <p>Graphic design services play a crucial role in helping
+businesses establish their visual identity and communicate
+effectively with their audience.</p>
+    </div>
+    <div class="feature-card">
+      <img src="images/digital.png" alt="Icon" class="icon" style="height: 80px; width: 90px;"/>
+      <h3>Digital Marketing</h3>
+      <p>Shashwatha Groups, we provide a comprehensive suite of
+digital marketing services tailored to meet the diverse needs
+of clients.</p>
+    </div>
+    <div class="feature-card">
+      <img src="images/seo.png" alt="Icon" class="icon" style="height: 70px; width: 70px;"/>
+      <h3>IT Consulting & Training</h3>
+      <p>Save and manage unlimited custom designs. Easily reuse them to jump-start new home pages.</p>
+    </div>
+    <div class="feature-card">
+      <img src="images/erp.jpg" alt="Icon" class="icon" style="height: 90px; width: 90px;"/>
+      <h3>erp software for enterprise</h3>
+      <p>Manage your entire website's design using global elements and website-wide design settings.</p>
     </div>
   </div>
 </section>
+<style>.features-section {
+  background: #f5f6ff;
+  padding: 60px 20px;
+  font-family: 'Open Sans', sans-serif;
+}
 
+.container1 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
+.feature-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  padding: 30px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
 
+.feature-card:hover {
+  transform: translateY(-5px);
+}
 
- <section class="features" id="features">
-   <!-- Services Heading -->
-   <h2 class="services-heading">Services</h2>
+.icon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 20px;
+}
 
-   <div class="container">
-       <div class="features-grid">
-           <div class="feature-card">
-               <div class="feature-icon" style="height: 100px; width: 100px;">
-                   <svg viewBox="0 0 24 24" fill="currentColor">
-                       <path d="M4 4h16c1.1 0 2 .9 2 2v10c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2zm0 12h16V6H4v10zm10 3h-4v2h4v-2z"/>
-                   </svg>
-               </div>
-               <div class="feature-image">
-                   <img src="./img/mobile.jpeg" alt="Real-time Analytics">
-               </div>
-               <h3 class="feature-title" style="color: purple;">Web/App Development</h3>
-               <div class="feature-info">
-                   <p>We provide a website design service that delivers a modern and professional design, tailored to meet the unique needs of your business. Our team works closely with you to that your website accurately represents your brand and helps you stand out online.</p>
-               </div>
-           </div>
+.feature-card h3 {
+  font-size: 18px;
+  color: #111;
+  margin-bottom: 10px;
+}
 
-           <div class="feature-card">
-               <div class="feature-icon" style="height: 100px; width: 100px;">
-                   <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                       <path d="M12 4.5c-4.14 0-7.5 3.36-7.5 7.5s3.36 7.5 7.5 7.5 7.5-3.36 7.5-7.5-3.36-7.5-7.5-7.5zm0 13c-3.03 0-5.5-2.47-5.5-5.5s2.47-5.5 5.5-5.5 5.5 2.47 5.5 5.5-2.47 5.5-5.5 5.5zm7.5-11.5h-2.5l-1-1h-5l-1 1h-2.5c-1.1 0-2 .9-2 2v9c0 1.1.9 2 2 2h15c1.1 0 2-.9 2-2v-9c0-1.1-.9-2-2-2zm-7.5 10c-2.48 0-4.5-2.02-4.5-4.5s2.02-4.5 4.5-4.5 4.5 2.02 4.5 4.5-2.02 4.5-4.5 4.5zm0-7c-1.38 0-2.5 1.12-2.5 2.5s1.12 2.5 2.5 2.5 2.5-1.12 2.5-2.5-1.12-2.5-2.5-2.5z"/>
-                   </svg>
-               </div>
-               <div class="feature-image">
-                   <img src="./img/graphic1.jpeg" alt="Real-time Analytics">
-               </div>
-               <h3 class="feature-title" style="color: purple;">Visual Graphic Design</h3>
-               <div class="feature-info">
-                   <p>Our Graphic deisigning works offers top-notch graphic designing services that will help you create stunning visuals for your brand. Our team of experts will work with you to bring your vision to life and make brand stand out.</p>
-               </div>
-           </div>
-
-           <div class="feature-card">
-               <div class="feature-icon" style="height: 100px; width: 100px;">
-                   <svg viewBox="0 0 24 24" fill="currentColor" >
-                       <path d="M3 3v18h18v-2H5V3H3zm6 12h2v4h-2v-4zm4-6h2v10h-2V9zm4-4h2v14h-2V5z"/>
-                   </svg>
-               </div>
-               <div class="feature-image">
-                   <img src="./img/digital.jpeg" alt="Real-time Analytics">
-               </div>
-               <h3 class="feature-title" style="color: purple;">Digital Marketing</h3>
-               <div class="feature-info">
-                   <p>Our digital marketing service can help you achieve your goals. From social media management to search engine optimization, we offer a range of services to help your business succeed in the digital world. Contact us today to learn more.</p>
-               </div>
-           </div>
-       </div>
-   </div>
-</section>
-
-
+.feature-card p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.6;
+}
+</style>
    <style>
       .services-heading {
     color: white;
@@ -702,39 +724,48 @@ document.querySelectorAll('.feature-card').forEach(card => {
 });
 </script>
 
-<body>
-  <section class="highlight-section">
-    <div class="highlight-overlay"></div>
-    <div class="highlight-container">
-      <h2><span>Why</span> Choose Us</h2>
-      <p class="highlight-intro">
-        We go beyond traditional security services, offering a comprehensive suite of solutions
-        designed to meet the unique needs of businesses, residences, and event organizers.
-      </p>
-      <div class="highlight-features">
-        <div class="highlight-feature-box">
-          <h3>✔ Tailored Security Solutions</h3>
-          <p>
-            We go beyond one-size-fits-all approaches, offering Customized Security Assessments
-            to identify specific vulnerabilities and crafting personalized security strategies.
-          </p>
-        </div>
-        <div class="highlight-feature-box">
-          <h3>✔ Cutting-Edge Technology</h3>
-          <p>
-            Security is not static, and neither are we. SecureGuard Solutions stays ahead of
-            emerging threats with cutting-edge technology.
-          </p>
-        </div>
+ <section class="highlight-section">
+  <div class="highlight-overlay"></div>
+  <div class="highlight-container">
+    <h2><span>Why</span> Choose Us</h2>
+    <p class="highlight-intro">
+      As a trusted website development company, we combine creativity, technology, and strategy to deliver custom web solutions that drive results for businesses of all sizes.
+    </p>
+    <div class="highlight-features">
+      <div class="highlight-feature-box">
+        <h3>✔ Customized Website Solutions</h3>
+        <p>
+          Every business is unique, and so are our websites. We provide tailor-made designs and development services that align perfectly with your brand identity and goals.
+        </p>
+      </div>
+      <div class="highlight-feature-box">
+        <h3>✔ Modern Technologies & Trends</h3>
+        <p>
+          We use the latest technologies — from responsive design to modern frameworks — ensuring your website is fast, secure, and future-ready.
+        </p>
+      </div>
+      <div class="highlight-feature-box">
+        <h3>✔ SEO & Performance Optimization</h3>
+        <p>
+          Your website is built with SEO best practices and optimized for performance to help you rank higher and engage more visitors effectively.
+        </p>
+      </div>
+      <div class="highlight-feature-box">
+        <h3>✔ End-to-End Support</h3>
+        <p>
+          From planning to launch and beyond, we provide full-cycle development and ongoing support to keep your website updated and running smoothly.
+        </p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
 
 
 <footer class="footer">
   <div class="footer-top">
     <div class="footer-links">
-      <a href="#">Terms of Service</a>
+       <!-- <a href="#">Terms of Service</a> -->
       <a href="#">Privacy Policy</a>
       <a href="#">Support</a>
     </div>
@@ -749,22 +780,22 @@ document.querySelectorAll('.feature-card').forEach(card => {
 
   <div class="footer-main">
     <div class="footer-col company-info">
-      <img src="img/Shashwatha Groups Logo 2024.png" alt="Outer Web Logo" class="footer-logo" />
+      <!-- <img src="img/Shashwatha Groups Logo 2024.png" alt="Outer Web Logo" class="footer-logo" /> -->
       <p class="company-desc">
         We are an agency with a passion for creating beautiful, functional websites for clients.
       </p>
-      <p><i class="fas fa-phone-alt"></i> +1 (234) 567 89 00</p>
-  <p><i class="fas fa-envelope"></i> shashwathagroups@gmail.com</p>
+      <p><i class="fas fa-phone-alt"></i> +919611886982</p>
+  <p><i class="fas fa-envelope"></i> info@shashwathagroups.in</p>
     </div>
 
     <div class="footer-col">
       <h4>Navigation</h4>
       <ul>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Vacancies</a></li>
-        <li><a href="#">Our People</a></li>
-        <li><a href="#">Benefits</a></li>
-        <li><a href="#">Contacts</a></li>
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./about.html">About Us</a></li>
+        <li><a href="./services.html">Services</a></li>
+        <li><a href="./carrers1.html">Carrers</a></li>
+        <li><a href="./contact.html">Contacts</a></li>
       </ul>
     </div>
 
@@ -774,7 +805,7 @@ document.querySelectorAll('.feature-card').forEach(card => {
         <li><a href="#">Help</a></li>
         <li><a href="#">Categories</a></li>
         <li><a href="#">Featured Vacancies</a></li>
-        <li><a href="#">Cases</a></li>
+        <!-- <li><a href="#">Cases</a></li> -->
         <li><a href="#">Support</a></li>
       </ul>
     </div>

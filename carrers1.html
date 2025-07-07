@@ -360,6 +360,207 @@
 
   </style>
 </head>
+ <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f8f9f7;
+    }
+
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      background-color: #ffffff;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .logo {
+      height: 40px;
+    }
+
+    .nav-links a {
+      margin: 0 12px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+    }
+
+    .social-icons img {
+      height: 20px;
+      margin-left: 10px;
+    }
+
+    .about-header {
+      background-color: #8B5CF6;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      padding: 40px;
+      flex-wrap: wrap;
+    }
+
+    .about-header h2 {
+      margin: 0;
+    }
+
+    .about-header a {
+      color: #b0d9c2;
+      text-decoration: none;
+    }
+
+    .about-right {
+      max-width: 50%;
+    }
+
+    .main-about {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 40px;
+      gap: 50px;
+    }
+
+    .about-image {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 8px;
+    }
+
+    .about-content {
+      max-width: 600px;
+    }
+
+    .section-label {
+      font-style: italic;
+      color: #888;
+      margin-bottom: 10px;
+    }
+
+    .about-content h1 {
+      margin: 5px 0;
+      color: #18472b;
+    }
+
+    .about-content h3 {
+      font-weight: normal;
+      color: #555;
+    }
+
+    .about-content p {
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .mission-vision {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 50px;
+      margin-top: 30px;
+    }
+
+    .mission,
+    .vision {
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .mission h4,
+    .vision h4 {
+      margin: 0 0 10px;
+      font-size: 18px;
+      color: #222;
+    }
+
+    .mission p,
+    .vision p {
+      color: #333;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 768px) {
+      .main-about {
+        flex-direction: column;
+        padding: 20px;
+      }
+
+      .about-header {
+        padding: 20px;
+      }
+
+      .about-right {
+        max-width: 100%;
+      }
+
+      .mission-vision {
+        flex-direction: column;
+        gap: 20px;
+      }
+    }
+    .about-image {
+  width: 620px;
+  height: 430px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+  </style>
+</head>
+  <style>
+    body {
+      margin: 0;
+      cursor: none; /* Hide the default cursor */
+    }
+
+    .custom-cursor {
+      width: 24px;
+      height: 24px;
+      border: 1px solid black;
+      border-radius: 50%;
+      position: fixed;
+      pointer-events: none;
+      z-index: 9999;
+      transition: transform 0.1s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .custom-cursor::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background-color: black;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+
+
+  <!-- Header -->
+  <header>
+    <div class="top-bar">
+      <img src="./img/Shashwatha Groups Logo 2024.png" alt="Outer Web Logo" class="logo" style="height: 110px; width:130px;" />
+      <nav class="nav-links">
+        <a href="./index.html">Home</a>
+        <a href="./about.html">About Us</a>
+        
+       <a href="./services.html">Services</a>
+       <a href="./contact.html">Contacts</a>
+       <a href="./carrers1.html">Carrers</a>
+        <!-- <a href="#">Our People</a> -->
+        
+      </nav>
+      <div class="social-icons">
+        <!-- <a href="#"><img src="youtube.png" alt="YouTube" /></a> -->
+        <a href="#"><img src="./img/instagram.png" alt="Instagram" /></a>
+        <a href="#"><img src="./img/twitter.png" alt="Twitter" /></a>
+        <a href="#"><img src="./img/facebook.png" alt="Facebook" /></a>
+      </div>
+    </div>
+  </header>
 <body>
 
  <section class="hero-grid" style="background-color: #8B5CF6;">
@@ -462,8 +663,8 @@
       <div>
         <p class="help-title">Have questions?</p>
         <p class="help-contact">
-          Call us <strong>+1 (234) 567 89 00</strong><br />
-          or write to <strong>shashwathagroups@gmail.com</strong>
+          Call us <strong>+919611886982</strong><br />
+          or write to <strong>info@shashwathagroups.in</strong>
         </p>
       </div>
     </div>
@@ -472,8 +673,8 @@
   <div class="vacancy-cards">
     <!-- Vacancy 1 -->
     <div class="vacancy-card">
-      <p class="category">Web Development</p>
-      <h3>Software Engineer</h3>
+      <p class="category">Frontend and Backend developer</p>
+      <h3>Full Stack Developer</h3>
       <div class="meta">
         <span><strong>Location:</strong> Remote</span>
         <!-- <span><strong>Rate:</strong> from $120,000</span> -->
@@ -485,7 +686,7 @@
       </ul>
       <p class="apply-text">
     If you're interested, please send your resume to
-    <a href="mailto:shashwathagroups@gmail.com">shashwathagroups@gmail.com</a>
+    <a href="mailto:info@shashwathagroups.in">info@shashwathagroups.in</a>
   </p>
     </div>
 
@@ -504,26 +705,26 @@
       </ul>
      <p class="apply-text">
     If you're interested, please send your resume to
-    <a href="mailto:shashwathagroups@gmail.com">shashwathagroups@gmail.com</a>
+    <a href="mailto:info@shashwathagroups.in">info@shashwathagroups.in</a>
   </p>
     </div>
 
     <!-- Vacancy 3 -->
     <div class="vacancy-card">
-      <p class="category">Digital Marketing</p>
-      <h3>Content Writer</h3>
+      <p class="category">SAP Consultant</p>
+      <h3>SAP Consultant</h3>
       <div class="meta">
         <span><strong>Location:</strong> Remote</span>
         <!-- <span><strong>Rate:</strong> from $56,000</span> -->
       </div>
       <ul class="requirements">
-        <li>✅ Strong analytical skillset;</li>
+        <li>✅  Strong problem-solving and analytical skills;</li>
         <li>✅ Bachelor's degree required;</li>
         <li>✅ 3+ years of experience.</li>
       </ul>
      <p class="apply-text">
     If you're interested, please send your resume to
-    <a href="mailto:shashwathagroups@gmail.com">shashwathagroups@gmail.com</a>
+    <a href="mailto:info@shashwathagroups.in">info@shashwathagroups.in</a>
   </p>
     </div>
   </div>
@@ -539,7 +740,7 @@
                <!-- <li><a href="javascript:void(0)"><i class="fa fa-google-plus"></i> </a> </li> -->
                <li><a href="javascript:void(0)"><i class="fa fa-linkedin"></i> </a> </li>
                <li><a href="https://www.instagram.com/shashwatha_groups/?hl=en "><i class="fa fa-instagram"></i> </a> </li>
-               <li><a href="sales.shashwathagroups@gmail.com"><i class="fa fa-envelope-o"></i> </a> </li>
+               <li><a href="sales.info@shashwathagroups.in"><i class="fa fa-envelope-o"></i> </a> </li>
             </ul>
             <p class="copyrights wow fadeInUp" data-wow-delay="350ms"> &copy; 2025 Shashwatha Groups. made with love by <a href="https://www.shashwathagroups.com/" target="_blank">Shashwatha Groups</a> </p>
          </div>

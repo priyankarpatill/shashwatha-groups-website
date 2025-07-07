@@ -43,65 +43,268 @@
 </div>
 <!--PreLoader Ends-->
 
-<!-- header -->
-<header class="site-header">
-   <nav class="navbar navbar-expand-lg center-brand static-nav">
-      <div class="container">
-         <a class="navbar-brand" href="index.html">
-            <img src="./img/download-removebg-preview (1).png" alt="logo" class="logo-default">
-            <img src="./img/Shashwatha Groups Logo 2024.png" alt="logo" class="logo-scrolled" style="height: 70px; width: 70px;">
-         </a>
-         
-         <!-- Mobile Toggle Button - Clean three-line icon -->
-         <button class="navbar-toggler hamburger-icon" type="button" id="mobileMenuToggle" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-         </button>
-         <!-- <button class="navbar-toggler hamburger-icon" onclick="toggleMobileMenu()" style="color: white;">☰</button> -->
-         <!-- Main Navigation -->
-         <div class="collapse navbar-collapse" id="xenav">
-            <ul class="navbar-nav" id="container">
-               <li class="nav-item">
-                  <a class="nav-link" href="#banner-main">Home</a>
-               </li>
-               <li class="nav-item">
-                  <a class="nav-link" href="#our-process">Features</a>
-               </li>
-               <li class="nav-item">
-                  <a class="nav-link" href="./about.html">About Us</a>
-               </li>
-               <li class="nav-item">
-                  <a class="nav-link" href="#portfolio_top">Portfolio</a>
-               </li>
-            </ul>
-            <ul class="navbar-nav ms-auto">
-               <li class="nav-item">
-                  <a class="nav-link" href="#our-pricings">Packages</a>
-               </li>
-               <li class="nav-item">
-                  <a class="nav-link" href="#our-testimonial">Clients</a>
-               </li>
-               <li class="nav-item">
-                  <a class="nav-link" href="./services.html">Services</a>
-               </li>
-               <li class="nav-item">
-                  <a class="nav-link" href="./contact.html">Contact</a>
-               </li>
-              <li class="nav-item">
-      <a class="nav-link " href="./carrers1.html">Careers</a>
-   </li>
-            </ul>
-         </div>
-      </div>
+<style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f8f9f7;
+    }
 
-      <!-- Side menu open button -->
-      <a href="javascript:void(0)" class="d-none d-lg-inline-block sidemenu_btn" id="sidemenu_toggle">
-         <span class="sidemenu-line"  ></span>
-         <span class="sidemenu-line"></span>
-         <span class="sidemenu-line"></span>
-      </a>
-   </nav>
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      background-color: #ffffff;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .logo {
+      height: 40px;
+    }
+
+    .nav-links a {
+      margin: 0 12px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+    }
+
+    .social-icons img {
+      height: 20px;
+      margin-left: 10px;
+    }
+
+    .about-header {
+      background-color: #8B5CF6;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      padding: 40px;
+      flex-wrap: wrap;
+    }
+
+    .about-header h2 {
+      margin: 0;
+    }
+
+    .about-header a {
+      color: #b0d9c2;
+      text-decoration: none;
+    }
+
+    .about-right {
+      max-width: 50%;
+    }
+
+    .main-about {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 40px;
+      gap: 50px;
+    }
+
+    .about-image {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 8px;
+    }
+
+    .about-content {
+      max-width: 600px;
+    }
+
+    .section-label {
+      font-style: italic;
+      color: #888;
+      margin-bottom: 10px;
+    }
+
+    .about-content h1 {
+      margin: 5px 0;
+      color: #18472b;
+    }
+
+    .about-content h3 {
+      font-weight: normal;
+      color: #555;
+    }
+
+    .about-content p {
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .mission-vision {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 50px;
+      margin-top: 30px;
+    }
+
+    .mission,
+    .vision {
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .mission h4,
+    .vision h4 {
+      margin: 0 0 10px;
+      font-size: 18px;
+      color: #222;
+    }
+
+    .mission p,
+    .vision p {
+      color: #333;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 768px) {
+      .main-about {
+        flex-direction: column;
+        padding: 20px;
+      }
+
+      .about-header {
+        padding: 20px;
+      }
+
+      .about-right {
+        max-width: 100%;
+      }
+
+      .mission-vision {
+        flex-direction: column;
+        gap: 20px;
+      }
+    }
+    .about-image {
+  width: 620px;
+  height: 430px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+  </style>
+</head>
+  <style>
+    body {
+      margin: 0;
+      cursor: none; /* Hide the default cursor */
+    }
+
+    .custom-cursor {
+      width: 24px;
+      height: 24px;
+      border: 1px solid black;
+      border-radius: 50%;
+      position: fixed;
+      pointer-events: none;
+      z-index: 9999;
+      transition: transform 0.1s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .custom-cursor::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background-color: black;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+
+
+  <!-- Header -->
+  <header>
+    <div class="top-bar">
+      <img src="./img/Shashwatha Groups Logo 2024.png" alt="Outer Web Logo" class="logo" style="height: 110px; width:130px;" />
+      <nav class="nav-links">
+        <a href="./index.html">Home</a>
+        <a href="./about.html">About Us</a>
+        
+       <a href="./services.html">Services</a>
+       <a href="./contact.html">Contacts</a>
+       <a href="./carrers1.html">Carrers</a>
+        <!-- <a href="#">Our People</a> -->
+        
+      </nav>
+    
+  
+
+
+    <!-- Button (Right) -->
+    <div class="header-right">
+      <a href="tel:+9611886982" class="get-started-btn">Call now ↗</a>
+    </div>
+
+  </div>
+</header>
+<style>
+  .custom-header {
+  background: white;
+  padding: 15px 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1000;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.header-logo {
+  height: 50px;
+  width: auto;
+}
+
+.rounded-menu {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 40px;
+  display: flex;
+  gap: 30px;
+  padding: 10px 25px;
+}
+
+.rounded-menu a {
+  color: black;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.rounded-menu a:hover {
+  color: #ffd700;
+}
+
+.get-started-btn {
+  background-color: purple;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.get-started-btn:hover {
+  background-color: #f1f1f1;
+}
+
+</style>
   <style>
     body {
       margin: 0;
@@ -144,53 +347,8 @@
     });
   </script>
    <!-- Side menu -->
-   <div class="side-menu" style="color: black;">
-      <div class="inner-wrapper">
-         <span class="btn-close" id="btn_sideNavClose"><i></i><i></i></span>
-         <nav class="side-nav w-100">
-            <ul class="navbar-nav">
-               <li class="nav-item">
-                  <a class="nav-link" href="#banner-main">Home</a>
-               </li>
-               <li class="nav-item">
-                  <a class="nav-link" href="#our-process">Features</a>
-               </li>
-               <li class="nav-item">
-                  <a class="nav-link" href="./about.html">About Us</a>
-               </li>
-               <li class="nav-item">
-                  <a class="nav-link" href="#portfolio_top">Portfolio</a>
-               </li>
-               <li class="nav-item">
-                  <a class="nav-link" href="#our-pricings">Packages</a>
-               </li>
-               <li class="nav-item">
-                  <a class="nav-link" href="#our-testimonial">Clients</a>
-               </li>
-               <li class="nav-item">
-                  <a class="nav-link" href="./services.html">Services</a>
-               </li>
-               <li class="nav-item">
-                  <a class="nav-link" href="./contact.html">Contact</a>
-               </li>
-               <li class="nav-item">
-      <a class="nav-link" href="./carrers1.html">Careers</a>
-   </li>
-               
-            </ul>
-         </nav>
-
-         <div class="side-footer w-100">
-            <ul class="social-icons-simple white top40">
-               <li><a href="https://www.facebook.com/profile.php?id=61550105577797 "><i class="fa fa-facebook"></i></a></li>
-               <li><a href="https://www.instagram.com/shashwatha_groups/?hl=en "><i class="fa fa-instagram"></i></a></li>
-               <!-- <li><a href="javascript:void(0)"><i class="fa fa-twitter"></i></a></li> -->
-            </ul>
-            <p class="whitecolor">&copy; 2021 Shashwatha Groups. Made With Love by Shashwatha Groups</p>
-         </div>
-      </div>
-   </div>
-   <a id="close_side_menu" href="javascript:void(0);"></a>
+   
+      
 </header>
 
 <style>
@@ -455,16 +613,18 @@ document.querySelectorAll('#xenav .nav-link').forEach(link => {
 
    /* Hero Section */
    .hero {
-       height: 100vh;
-       background: linear-gradient(to right, #4b0082, #b33f62);
-       display: flex;
-       flex-direction: column;
-       justify-content: center;
-       align-items: center;
-       text-align: center;
-       color: white;
-       padding: 20px;
-   }
+    height: 100vh;
+    background: 
+                url('./images/WhatsApp\ Image\ 2025-07-04\ at\ 10.25.49_91ac67fb.jpg') no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
 
    .hero h1 {
        font-size: 48px;
@@ -524,7 +684,7 @@ document.querySelectorAll('#xenav .nav-link').forEach(link => {
            <li data-index="rs-01" data-transition="fade" data-slotamount="default" data-easein="Power3.easeInOut" data-easeout="Power3.easeInOut" data-masterspeed="2000" data-fsmasterspeed="1500" class="rev_gradient">
 
                <!-- MAIN IMAGE -->
-               <img src="http://templates.acrothemes.com/xeone/images/transparent.png" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-bgparallax="10"  data-no-retina>
+               <img src="./images/WhatsApp Image 2025-07-04 at 10.25.49_91ac67fb.jpg" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-bgparallax="10"  data-no-retina>
                <!-- LAYER NR. 1 -->
                <div class="tp-caption tp-resizeme"
                  data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
@@ -673,7 +833,7 @@ document.querySelectorAll('#xenav .nav-link').forEach(link => {
            <!-- SLIDE 3  -->
            <li data-index="rs-03" data-transition="fade" data-slotamount="default" data-easein="Power3.easeInOut" data-easeout="Power3.easeInOut" data-masterspeed="2000" data-fsmasterspeed="1500">
                <!-- MAIN IMAGE -->
-               <img src="http://templates.acrothemes.com/xeone/images/banner-1.jpg" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-bgparallax="10" data-no-retina>
+               <img src="./images/WhatsApp Image 2025-07-04 at 10.25.49_91ac67fb.jpg" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-bgparallax="10" data-no-retina>
 
                <div class="tp-caption tp-resizeme"
                   data-x="['right','right','right','center']" data-hoffset="['0','0','0','0']"
@@ -725,7 +885,7 @@ document.querySelectorAll('#xenav .nav-link').forEach(link => {
             <!-- SLIDE 4  -->
            <li data-index="rs-04" data-transition="fade" data-slotamount="default" data-easein="Power3.easeInOut" data-easeout="Power3.easeInOut" data-masterspeed="2000" data-fsmasterspeed="1500" class="banner-overlay">
                <!-- MAIN IMAGE -->
-               <img src="http://templates.acrothemes.com/xeone/images/banner-2.jpg" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-bgparallax="10" data-no-retina>
+               <img src="./images/WhatsApp Image 2025-07-04 at 10.25.49_91ac67fb.jpg" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-bgparallax="10" data-no-retina>
                <!-- LAYER NR. 1 -->
                <div class="tp-caption tp-resizeme"
                   data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
@@ -793,53 +953,137 @@ document.querySelectorAll('#xenav .nav-link').forEach(link => {
 
 
 <!--half img section-->
-<div id="twocopies">  
-<section class="half-section">
-   <div class="container-fluid">
-      <div class="row">
-         <div class="col-lg-6 nopadding">
-            <div class="image hover-effect img-container">
-               <img alt="" src="./img/2nd.jpeg" class="equalheight" style="height: 100px;">
-            </div>
-         </div>
-         <div class="col-lg-6 nopadding">
-            <div class="split-box text-center center-block container-padding equalheight">
-               <div class="heading-title padding">
-                  <h2 class="darkcolor bottom20 wow fadeInUp" data-wow-delay="400ms">Shashwatha Groups</h2>
-               <span class="wow fadeInUp" data-wow-delay="300ms">is a premier web development agency</span>
-               
-               <p class="heading_space wow fadeInUp" data-wow-delay="500ms">Founded in 2015, dedicated to transforming ideas into stunning digital experiences. With a strong mission to empower businesses through innovative design and cutting-edge technology, we strive to exceed our clients' expectations. </p>
-               <!-- <a href="#portfolio_top" class="button btnprimary pagescroll wow fadeInUp" data-wow-delay="600ms">Design Works</a>   -->
-               <!-- <a href="#portfolio_top" class="button btnprimary pagescroll wow fadeInUp" data-wow-delay="600ms">Design Works</a>   -->
-            </div>
-            </div>
-         </div>
-      </div>
-   </div>
-</section>
-<section class="half-section">
-   <div class="container-fluid">
-      <div class="row">
-         <div class="col-lg-6 nopadding">
-            <div class="split-box text-center center-block container-padding equalheight">
-               <div class="heading-title padding">
-               <span class="wow fadeInUp" data-wow-delay="300ms">About Us</span>
-               <!-- <h2 class="darkcolor bottom20 wow fadeInUp" data-wow-delay="400ms">SEO Marketing</h2> -->
-               <p class="heading_space wow fadeInUp" data-wow-delay="500ms">Our team of skilled professionals is committed to delivering tailored solutions that enhance online presence and drive growth. At Shashwatha Groups, your vision becomes our mission and together, we create impactful websites that resonate with your audience.</p>
-               <a href="#our-team" class="button btnsecondary pagescroll wow fadeInUp" data-wow-delay="600ms">Discover more</a>
-            </div>
-            </div>
-         </div>
-         <div class="col-lg-6 nopadding">
-            <div class="image hover-effect img-container">
-               <img alt="" src="./img/3rd.jpg" class="equalheight">
-            </div>
-         </div>
-      </div>
-   </div>
-</section>
-</div>  
 
+<section class="builder-features">
+  <div class="content-wrapper">
+    <div class="left-image animate-left">
+      <img src="./images/features6-img1.png" alt="Builder Image" />
+    </div>
+    <div class="right-text animate-right">
+      <h2>About Us</h2>
+      <h4 class="tag">PAGE BUILDER</h4>
+      <h3>Front/Back End Page Builder</h3>
+      <p>
+        Shashwatha Groups was founded in the year 2018 by a team
+of industry experts with a passion in Designing and
+Developing. From intimate large-scale,we ensure that every
+detail is flawlessly planned and executed from start to finish.
+We founded Shashwatha Groups with one goal in mind to
+design and produce creative providing end to end services on
+Websites and Web Based Applications.
+      </p>
+      <a href="./about.html" class="info-btn">Get More Info ➜</a>
+    </div>
+  </div>
+</section>
+
+<style>
+   .builder-features {
+  padding: 80px 20px;
+  background-color: #fff;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.left-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.right-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.right-text h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+  color: #111;
+}
+
+.tag {
+  color: #7e51ff;
+  font-weight: bold;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.right-text h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: #222;
+}
+
+.right-text p {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.info-btn {
+  background: #7e51ff;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s;
+  display: inline-block;
+}
+
+.info-btn:hover {
+  background: #5f3ecb;
+}
+
+/* Animation Keyframes */
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Apply Animation */
+.animate-left {
+  animation: fadeInLeft 1s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-right {
+  animation: fadeInRight 1s ease-out forwards;
+  opacity: 0;
+  animation-delay: 0.3s;
+}
+
+</style>
 <!--half img section ends-->     
    
 <!-- WOrk Process-->  
@@ -856,28 +1100,33 @@ document.querySelectorAll('#xenav .nav-link').forEach(link => {
          <ul class="process-wrapp">
             <li class="whitecolor wow fadeIn" data-wow-delay="300ms">
                <span class="pro-step bottom20">01</span>
-               <p class="fontbold bottom25">Concept</p>
-               <p>Understanding client needs and defining project objectives.</p>
+               <p class="fontbold bottom25">Meeting our clients</p>
+               <p>Before the meeting, we conduct thorough research on the client
+to understand their goals, values, and previous experiences.</p>
             </li>
             <li class="whitecolor wow fadeIn" data-wow-delay="400ms">
                <span class="pro-step bottom20">02</span>
-               <p class="fontbold bottom25">Plan</p>
-               <p>Creating a roadmap with timelines and technology selection.</p>
+               <p class="fontbold bottom25">Project Planning</p>
+               <p>Next step is to create a project plan. This includes defining the
+scope, timeline, resources, and budget.</p>
             </li>
             <li class="whitecolor wow fadeIn" data-wow-delay="500ms">
                <span class="pro-step bottom20">03</span>
-               <p class="fontbold bottom25">Design</p>
-               <p>Crafting user-friendly and responsive UI/UX designs.</p>
+               <p class="fontbold bottom25">Design and Development</p>
+               <p>Development teams then build the product using appropriate
+technologies like Front end and Back end codings.</p>
             </li>
             <li class="whitecolor wow fadeIn" data-wow-delay="600ms">
                <span class="pro-step bottom20">04</span>
-               <p class="fontbold bottom25">Development</p>
-               <p>Building secure, functional, and scalable solutions.</p>
+               <p class="fontbold bottom25">Testing</p>
+               <p>The developed product undergoes rigorous testing to
+identify and fix any bugs or issues.</p>
             </li>
             <li class="whitecolor wow fadeIn" data-wow-delay="700ms">
                <span class="pro-step bottom20">05</span>
-               <p class="fontbold bottom25">Quality Check</p>
-               <p>Testing for performance, security, and usability.</p>
+               <p class="fontbold bottom25">Deployment</p>
+               <p>After successful testing, the product is deployed. This involves
+launching the website or app and making it accessible to users.</p>
             </li>
          </ul>
       </div>
@@ -1029,61 +1278,94 @@ document.querySelectorAll('#xenav .nav-link').forEach(link => {
 </section> -->
 <!-- Our Team ends--> 
      
-<section class="features" id="features">
-   <!-- Services Heading -->
-   <h2 class="services-heading">Services</h2>
-
-   <div class="container">
-       <div class="features-grid">
-           <div class="feature-card">
-               <div class="feature-icon" style="height: 100px; width: 100px;">
-                   <svg viewBox="0 0 24 24" fill="currentColor">
-                       <path d="M4 4h16c1.1 0 2 .9 2 2v10c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2zm0 12h16V6H4v10zm10 3h-4v2h4v-2z"/>
-                   </svg>
-               </div>
-               <div class="feature-image">
-                   <img src="./img/mobile.jpeg" alt="Real-time Analytics">
-               </div>
-               <h3 class="feature-title" style="color: purple;">Web/App Development</h3>
-               <div class="feature-info">
-                   <p>We provide a website design service that delivers a modern and professional design, tailored to meet the unique needs of your business. Our team works closely with you to that your website accurately represents your brand and helps you stand out online.</p>
-               </div>
-           </div>
-
-           <div class="feature-card">
-               <div class="feature-icon" style="height: 100px; width: 100px;">
-                   <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                       <path d="M12 4.5c-4.14 0-7.5 3.36-7.5 7.5s3.36 7.5 7.5 7.5 7.5-3.36 7.5-7.5-3.36-7.5-7.5-7.5zm0 13c-3.03 0-5.5-2.47-5.5-5.5s2.47-5.5 5.5-5.5 5.5 2.47 5.5 5.5-2.47 5.5-5.5 5.5zm7.5-11.5h-2.5l-1-1h-5l-1 1h-2.5c-1.1 0-2 .9-2 2v9c0 1.1.9 2 2 2h15c1.1 0 2-.9 2-2v-9c0-1.1-.9-2-2-2zm-7.5 10c-2.48 0-4.5-2.02-4.5-4.5s2.02-4.5 4.5-4.5 4.5 2.02 4.5 4.5-2.02 4.5-4.5 4.5zm0-7c-1.38 0-2.5 1.12-2.5 2.5s1.12 2.5 2.5 2.5 2.5-1.12 2.5-2.5-1.12-2.5-2.5-2.5z"/>
-                   </svg>
-               </div>
-               <div class="feature-image">
-                   <img src="./img/graphic1.jpeg" alt="Real-time Analytics">
-               </div>
-               <h3 class="feature-title" style="color: purple;">Visual Graphic Design</h3>
-               <div class="feature-info">
-                   <p>Our Graphic deisigning works offers top-notch graphic designing services that will help you create stunning visuals for your brand. Our team of experts will work with you to bring your vision to life and make brand stand out.</p>
-               </div>
-           </div>
-
-           <div class="feature-card">
-               <div class="feature-icon" style="height: 100px; width: 100px;">
-                   <svg viewBox="0 0 24 24" fill="currentColor" >
-                       <path d="M3 3v18h18v-2H5V3H3zm6 12h2v4h-2v-4zm4-6h2v10h-2V9zm4-4h2v14h-2V5z"/>
-                   </svg>
-               </div>
-               <div class="feature-image">
-                   <img src="./img/digital.jpeg" alt="Real-time Analytics">
-               </div>
-               <h3 class="feature-title" style="color: purple;">Digital Marketing</h3>
-               <div class="feature-info">
-                   <p>Our digital marketing service can help you achieve your goals. From social media management to search engine optimization, we offer a range of services to help your business succeed in the digital world. Contact us today to learn more.</p>
-               </div>
-           </div>
-       </div>
-   </div>
+<section class="features-section">
+    <h2 class="services-heading">Services</h2>
+  <div class="container1">
+    <div class="feature-card">
+      <img src="images/website.png" alt="Icon" class="icon" style="height: 90px; width: 90px;"/>
+      <h3>Website Design & Development</h3>
+      <p>We provide a website design service that delivers a modern
+and professional design, tailored to meet the unique needs
+of your business.</p>
+    </div>
+    <div class="feature-card">
+      <img src="images/app.png" alt="Icon" class="icon" style="height: 70px; width: 70px;"/>
+      <h3>App Development</h3>
+      <p>The process of app design and development is
+multifaceted, requiring a blend of creativity and
+technical skills.</p>
+    </div>
+    <div class="feature-card">
+      <img src="images/graphic.png" alt="Icon" class="icon" style="height: 90px; width: 90px;"/>
+      <h3>Graphic Design</h3>
+      <p>Graphic design services play a crucial role in helping
+businesses establish their visual identity and communicate
+effectively with their audience.</p>
+    </div>
+    <div class="feature-card">
+      <img src="images/digital.png" alt="Icon" class="icon" style="height: 80px; width: 90px;"/>
+      <h3>Digital Marketing</h3>
+      <p>Shashwatha Groups, we provide a comprehensive suite of
+digital marketing services tailored to meet the diverse needs
+of clients.</p>
+    </div>
+    <div class="feature-card">
+      <img src="images/seo.png" alt="Icon" class="icon" style="height: 70px; width: 70px;"/>
+      <h3>IT Consulting & Training</h3>
+      <p>Save and manage unlimited custom designs. Easily reuse them to jump-start new home pages.</p>
+    </div>
+    <div class="feature-card">
+      <img src="images/erp.jpg" alt="Icon" class="icon" style="height: 90px; width: 90px;"/>
+      <h3>erp software for enterprise</h3>
+      <p>Manage your entire website's design using global elements and website-wide design settings.</p>
+    </div>
+  </div>
 </section>
+<style>.features-section {
+  background: #f5f6ff;
+  padding: 60px 20px;
+  font-family: 'Open Sans', sans-serif;
+}
 
+.container1 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
+.feature-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  padding: 30px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 20px;
+}
+
+.feature-card h3 {
+  font-size: 18px;
+  color: #111;
+  margin-bottom: 10px;
+}
+
+.feature-card p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.6;
+}
+</style>
    <style>
       .services-heading {
     color: white;
@@ -1499,7 +1781,7 @@ document.querySelectorAll('.feature-card').forEach(card => {
 <!--Some Feature ends--> 
 
  <!--Gallery-->
-<section id="portfolio_top" class="bglight">
+<!-- <section id="portfolio_top" class="bglight">
    <div class="container">
       <div id="portfolio-measonry" class="cbp border-portfolio simple_overlay">
          <div class="cbp-item itemshadow">
@@ -1557,8 +1839,147 @@ document.querySelectorAll('.feature-card').forEach(card => {
          </div>
       </div>
    </div>
+</section> -->
+<!--Gallery ends --> 
+     <section class="integration-section" style="background-color:#643094 ;">
+  <div class="content">
+    <h3>OUR HIGHLIGHTS</h3>
+    <br>
+    <h5>
+      Shashwatha Groups specializes in Website design and
+      development, Graphic designing, and Digital marketing,
+      providing a comprehensive suite of services to meet various
+      client needs
+    </h5>
+
+    <!-- ✅ Bullet points -->
+    <ul>
+      <li>Innovative Solutions</li>
+      <li>Client-Centric Approach</li>
+      <li>Strong Portfolio</li>
+      <li>Ongoing Support</li>
+    </ul>
+
+    <a href="#" class="btn">Get Started, It’s Free</a>
+  </div>
+
+  <div class="circle-container">
+    <div class="center-icon">
+      <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Mailchimp" />
+    </div>
+
+    <div class="orbit">
+      <img class="icons" src="https://cdn-icons-png.flaticon.com/512/5968/5968870.png" alt="Shopify" style="--i: 0;">
+      <img class="icons" src="https://cdn-icons-png.flaticon.com/512/2111/2111602.png" alt="Vimeo" style="--i: 1;">
+      <img class="icons" src="https://cdn-icons-png.flaticon.com/512/732/732190.png" alt="Docs" style="--i: 2;">
+      <img class="icons" src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="Spotify" style="--i: 3;">
+      <img class="icons" src="https://cdn-icons-png.flaticon.com/512/300/300221.png" alt="Google Ads" style="--i: 4;">
+      <img class="icons" src="https://cdn-icons-png.flaticon.com/512/888/888879.png" alt="App Store" style="--i: 5;">
+      <img class="icons" src="https://cdn-icons-png.flaticon.com/512/1451/1451219.png" alt="Sketch" style="--i: 6;">
+      <img class="icons" src="https://cdn-icons-png.flaticon.com/512/888/888853.png" alt="Taobao" style="--i: 7;">
+    </div>
+  </div>
 </section>
-<!--Gallery ends -->         
+ 
+  <style>
+   .content ul {
+  padding-left: 20px;
+  margin: 15px 0;
+  list-style-type: disc; /* Or use circle/square/none */
+}
+
+.content ul li {
+  margin-bottom: 8px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+   .integration-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 80px 40px;
+  flex-wrap: wrap;
+}
+
+.content {
+  max-width: 500px;
+}
+
+.content h5 {
+  color: #b4a4ff;
+  font-size: 14px;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.content h1 {
+  font-size: 36px;
+  margin: 10px 0;
+}
+
+.content p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 20px;
+  background-color: white;
+  color: #5a00c2;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background-color: #e0d5ff;
+}
+
+.circle-container {
+  position: relative;
+  width: 350px;
+  height: 350px;
+}
+
+.center-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 20px;
+  border-radius: 50%;
+}
+
+.center-icon img {
+  width: 50px;
+  height: 50px;
+}
+
+.orbit {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.icons {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #fff;
+  padding: 5px;
+  transform: rotate(calc(45deg * var(--i))) translate(150px) rotate(calc(-45deg * var(--i)));
+  top: 50%;
+  left: 50%;
+  transform-origin: center;
+}
+  </style>
 
 <!-- Mobile Apps -->  
 <section id="our-apps" class="padding">
@@ -1626,7 +2047,7 @@ document.querySelectorAll('.feature-card').forEach(card => {
                      <h4>24/7 Support</h4>
                      <p>Round-the-clock assistance for uninterrupted service.</p>
                   </div>
-               </div>T
+               </div>
             </div>
          </div>
       </div>
@@ -2207,7 +2628,7 @@ document.addEventListener("DOMContentLoaded", function() {
                </div>
                <div class="col-md-6 col-sm-6 our-address top40">
                   <h5 class="bottom25">Our Email</h5>
-                  <p class="bottom15">Main Email : shashwathagroups@gmail.com
+                  <p class="bottom15">Main Email : info@shashwathagroups.in
 
 
  <!-- <span class="block">Inquiries : email@website.com</span> </p> -->
@@ -2215,7 +2636,7 @@ document.addEventListener("DOMContentLoaded", function() {
                </div>
                <div class="col-md-6 col-sm-6 our-address top40">
                   <h5 class="bottom25">Our Support</h5>
-                  <p class="bottom15">Main Support : sales.shashwathagroups@gmail.com
+                  <p class="bottom15">Main Support : sales.info@shashwathagroups.in
                      <a href="./privacy.html" target="_blank" style="color: #00bcd4; text-transform: uppercase; font-size: 13px; font-weight: 800;">Privacy Policy</a>
 
 
@@ -2300,7 +2721,7 @@ document.addEventListener("DOMContentLoaded", function() {
                <!-- <li><a href="javascript:void(0)"><i class="fa fa-google-plus"></i> </a> </li> -->
                <li><a href="javascript:void(0)"><i class="fa fa-linkedin"></i> </a> </li>
                <li><a href="https://www.instagram.com/shashwatha_groups/?hl=en "><i class="fa fa-instagram"></i> </a> </li>
-               <li><a href="sales.shashwathagroups@gmail.com"><i class="fa fa-envelope-o"></i> </a> </li>
+               <li><a href="sales.info@shashwathagroups.in"><i class="fa fa-envelope-o"></i> </a> </li>
             </ul>
             <p class="copyrights wow fadeInUp" data-wow-delay="350ms"> &copy; 2025 Shashwatha Groups. made with love by <a href="https://www.shashwathagroups.com/" target="_blank">Shashwatha Groups</a> </p>
          </div>
