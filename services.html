@@ -544,6 +544,32 @@ of clients.</p>
     bottom: 0;
 }
 
+/* Hover Effect - Show Info */
+.feature-card:hover .feature-info {
+    bottom: 0;
+}
+/* Hover background and text color change */
+.feature-card:hover {
+background: linear-gradient(135deg, #ffd6e8, #ffc0cb); /* Blue gradient */
+  color: white;
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.feature-card:hover h3,
+.feature-card:hover p {
+  color: white;
+}
+
+/* Optional: make icon color adjust if it's SVG or use filters for images */
+
+.icon {
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover img.icon {
+  transform: scale(1.1); /* subtle zoom on hover */
+}
    </style>
 
 <script>
@@ -766,8 +792,8 @@ document.querySelectorAll('.feature-card').forEach(card => {
   <div class="footer-top">
     <div class="footer-links">
        <!-- <a href="#">Terms of Service</a> -->
-      <a href="#">Privacy Policy</a>
-      <a href="#">Support</a>
+      <a href="./privacy.html">Privacy Policy</a>
+      <!-- <a href="#">Support</a> -->
     </div>
     <div class="footer-social">
       <!-- <span>Follow us :</span> -->
@@ -806,7 +832,7 @@ document.querySelectorAll('.feature-card').forEach(card => {
         <li><a href="#">Categories</a></li>
         <li><a href="#">Featured Vacancies</a></li>
         <!-- <li><a href="#">Cases</a></li> -->
-        <li><a href="#">Support</a></li>
+        <li><!-- <a href="#">Support</a> --></li>
       </ul>
     </div>
 

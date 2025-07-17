@@ -614,8 +614,7 @@ document.querySelectorAll('#xenav .nav-link').forEach(link => {
    /* Hero Section */
    .hero {
     height: 100vh;
-    background: 
-                url('./images/WhatsApp\ Image\ 2025-07-04\ at\ 10.25.49_91ac67fb.jpg') no-repeat center center/cover;
+    /* background: url('./images/WhatsApp\ Image\ 2025-07-04\ at\ 10.25.49_91ac67fb.jpg') no-repeat center center/cover; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -669,12 +668,149 @@ document.querySelectorAll('#xenav .nav-link').forEach(link => {
        .hero p {
            font-size: 18px;
        }
-   }
+   }.video-background {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+  padding: 20px;
+}
+.hero-text {
+  position: absolute;
+  top: 20%; /* Decrease this % to move text up */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+   z-index: 10;
+}
+
+@media (max-width: 768px) {
+  .hero-text {
+    top: 25%; /* Adjust for mobile */
+  }
+}
+.hero-text {
+  padding-top: 200px; /* or similar */
+  padding-bottom: 100px;
+  text-align: center;
+  color: white;
+}
+
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 20px;
+}
+
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 90%;
+}
+
+.hero h1 {
+  font-size: 48px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.hero .btn {
+  margin-top: 20px;
+  padding: 12px 24px;
+  background-color: #00bcd4;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.hero .btn:hover {
+  background-color: #0097a7;
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .hero .btn {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+}
+.hero {
+  /* existing styles... */
+  padding: 20px;
+  
+  /* align-items: flex-start; aligns to the top */
+  padding-top: 0px; /* adjust this value to move the text lower or higher */
+}
+.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;   /* horizontal centering */
+  align-items: center;       /* vertical centering */
+  text-align: center;
+  color: white;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+
 </style>
+
 <section class="hero">
    <h1>Cost Effective <br> <span style="color: #00bcd4;">Software and It Consultant</span><br>Time to work </h1>
-   <!-- <p>The Best Multipurpose One Page Template in Market</p> -->
-   <button class="btn">LEARN MORE</button>
+   <!-- <p>The Best Multipurpose One Page Template in Market</p> --> <video autoplay muted loop playsinline class="bg-video">
+    <source src="./3129595-uhd_3840_2160_30fps.mp4" type="video/mp4"></video>
+   <a href="./about.html">
+  <button class="btn">LEARN MORE</button>
+</a>
+<div class="hero-content">
+    <h1>Cost Effective <br> 
+      <span style="color: #00bcd4;">Software and It Consultant</span><br>
+      Time to work 
+    </h1>
+    <a href="./about.html">
+      <button class="btn">LEARN MORE</button>
+    </a>
+  </div>
 </section>
 <!--Main Slider-->
 <div id="revo_main_wrapper" class="rev_slider_wrapper fullwidthbanner-container">
@@ -744,7 +880,8 @@ document.querySelectorAll('#xenav .nav-link').forEach(link => {
                     data-marginbottom="[0,0,0,0]" data-marginleft="[0,0,0,0]"
                     data-frames='[{"delay":700,"speed":2000,"frame":"0","from":"sX:1;sY:1;opacity:0;fb:40px;","to":"o:1;fb:0;","ease":"Power4.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"},{"frame":"hover","speed":"200","ease":"Linear.easeNone","to":"o:1;rX:0;rY:0;rZ:0;z:0;fb:0;"}]'
                     style=" box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;">
-                    <span class="button btnprimary-alt pagescroll">Learn More</span>
+                    <span class="button btnprimary-alt pagescroll" onclick="window.location.href='./about.html'">Learn More</span>
+
                 </a>
            </li>
 
@@ -1579,6 +1716,28 @@ of clients.</p>
 .feature-card:hover .feature-info {
     bottom: 0;
 }
+/* Hover background and text color change */
+.feature-card:hover {
+background: linear-gradient(135deg, #ffd6e8, #ffc0cb); /* Blue gradient */
+  color: white;
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.feature-card:hover h3,
+.feature-card:hover p {
+  color: white;
+}
+
+/* Optional: make icon color adjust if it's SVG or use filters for images */
+
+.icon {
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover img.icon {
+  transform: scale(1.1); /* subtle zoom on hover */
+}
 
    </style>
 
@@ -1980,7 +2139,67 @@ document.querySelectorAll('.feature-card').forEach(card => {
   transform-origin: center;
 }
   </style>
-
+<!--Gallery-->
+<section id="portfolio_top" class="bglight">
+   <div class="container">
+      <div id="portfolio-measonry" class="cbp border-portfolio simple_overlay">
+         <div class="cbp-item itemshadow">
+            <img src="./img/app development in violet cartoon.avif" alt="">
+            <div class="overlay center-block whitecolor">
+               <a class="plus" data-fancybox="gallery" href="./images/portfolio-1.jpg"></a>
+               <h4 class="top30">Website Design and Development</h4>
+               <p>Small Portfolio Detail Here</p>
+            </div>
+         </div>
+         <div class="cbp-item">
+            <div class="text_wrap wow fadeIn" data-wow-delay="350ms">
+               <div class="heading-title text-center padding_top">
+                  <span>Portfolio Designs</span>
+                  <h2 class="darkcolor bottom10">Creative Work</h2>
+                  <p>Creative website development blends design and functionality to deliver engaging user experiences.</p>
+               </div>
+            </div>
+         </div>
+         <div class="cbp-item itemshadow">
+            <img src="./img/User Experience Enhancements violet cart.avif" alt="">
+            <div class="overlay center-block whitecolor">
+               <a class="plus" data-fancybox="gallery" href="https://www.youtube.com/watch?v=_sI_Ps7JSEk&amp;autoplay=1&amp;rel=0&amp;controls=0&amp;showinfo=0"></a>
+               <h4 class="top30">Graphic Design</h4>
+               <p>Small Portfolio Detail Here</p>
+            </div>
+         </div>
+         <div class="cbp-item itemshadow">
+            <img src="./img/Website management in cartoon with violet background.avif" alt="">
+            <div class="overlay center-block whitecolor">
+               <a class="plus" data-fancybox="gallery" href="./images/portfolio-3.jpg"></a>
+               <h4 class="top30">App Designing and Development</h4>
+               <p>Small Portfolio Detail Here</p>
+            </div>
+         </div>
+         <div class="cbp-item itemshadow">
+            <img src="./img/Website development in cartoon with violet background.avif" alt="">
+            <div class="overlay center-block whitecolor">
+               <a class="plus" data-fancybox="gallery" href="./images/portfolio-4.jpg"></a>
+               <h4 class="top30">Digital Marketing</h4>
+               <p>Small Portfolio Detail Here</p>
+            </div>
+         </div>
+         <div class="cbp-item">
+            <div class="bottom-text">
+               <div class="cells  wow fadeIn" data-wow-delay="350ms">
+                  <p>We’ve Completed More Than </p>
+                  <h2 class="port_head gradient_text">682</h2>
+                  <p class="bottom15">projects for our amazing clients,</p>
+               </div>
+               <div class="cells wow fadeIn" data-wow-delay="350ms">
+                  <a href="#brands-section" class="button btnsecondary btn-gradient-hvr">View All Work</a>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+<!--Gallery ends -->         
 <!-- Mobile Apps -->  
 <section id="our-apps" class="padding">
    <div class="container">
@@ -2421,7 +2640,7 @@ document.querySelectorAll('.feature-card').forEach(card => {
 
 
 <!--Partners Ends-->
-<section class="brands-section">
+<section class="brands-section" id="brands-section">
    <h2 class="centered-title">Our Clients</h2>
    <div class="brands-container">
        <div class="brands-wrapper">
@@ -2719,7 +2938,8 @@ document.addEventListener("DOMContentLoaded", function() {
                <li><a href="https://www.facebook.com/profile.php?id=61550105577797 " ><i class="fa fa-facebook"></i> </a> </li>
                <!-- <li><a href="javascript:void(0)"><i class="fa fa-twitter"></i> </a> </li> -->
                <!-- <li><a href="javascript:void(0)"><i class="fa fa-google-plus"></i> </a> </li> -->
-               <li><a href="javascript:void(0)"><i class="fa fa-linkedin"></i> </a> </li>
+               <li><a href="
+https://www.linkedin.com/in/shashwatha-groups-undefined-15550a373/"><i class="fa fa-linkedin"></i> </a> </li>
                <li><a href="https://www.instagram.com/shashwatha_groups/?hl=en "><i class="fa fa-instagram"></i> </a> </li>
                <li><a href="sales.info@shashwathagroups.in"><i class="fa fa-envelope-o"></i> </a> </li>
             </ul>
