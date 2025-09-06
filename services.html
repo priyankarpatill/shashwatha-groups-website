@@ -201,29 +201,138 @@
     });
   </script>
 <body>
-
   <!-- Header -->
   <header>
-    <div class="top-bar">
-      <img src="./img/Shashwatha Groups Logo 2024.png" alt="Outer Web Logo" class="logo" style="height: 110px; width:130px;" />
-      <nav class="nav-links">
+  <div class="top-bar">
+    <img src="./img/Shashwatha Groups Logo 2024.png" alt="Outer Web Logo" class="logo" style="height: 110px; width:130px;" />
+
+    <!-- Desktop Menu -->
+    <nav class="nav-links desktop-menu">
+      <a href="./index.html">Home</a>
+      <a href="./about.html">About Us</a>
+      <a href="./services.html">Services</a>
+      <a href="./contact.html">Contacts</a>
+      <a href="./carrers1.html">Careers</a>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+      <div class="menu-toggle" id="menu-toggle">☰</div>
+      <div class="menu-items" id="menu-items">
         <a href="./index.html">Home</a>
         <a href="./about.html">About Us</a>
-        
-       <a href="./services.html">Services</a>
-       <a href="./contact.html">Contacts</a>
-       <a href="./carrers1.html">Carrers</a>
-        <!-- <a href="#">Our People</a> -->
-        
-      </nav>
-      <div class="social-icons">
-        <!-- <a href="#"><img src="youtube.png" alt="YouTube" /></a> -->
-        <a href="#"><img src="./img/instagram.png" alt="Instagram" /></a>
-        <a href="#"><img src="./img/twitter.png" alt="Twitter" /></a>
-        <a href="#"><img src="./img/facebook.png" alt="Facebook" /></a>
+        <a href="./services.html">Services</a>
+        <a href="./contact.html">Contacts</a>
+        <a href="./carrers1.html">Careers</a>
       </div>
     </div>
-  </header>
+
+    <!-- Social icons only for desktop -->
+    <div class="social-icons desktop-social">
+      <a href="https://www.instagram.com/shashwatha_groups/?hl=en">
+        <img src="./img/instagram.png" alt="Instagram" />
+      </a>
+      <a href="https://www.facebook.com/profile.php?id=61550105577797">
+        <img src="./img/facebook.png" alt="Facebook" />
+      </a>
+    </div>
+  </div>
+</header>
+
+<style>
+/* General */
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  padding: 10px 20px;
+}
+
+.logo {
+  height: 70px;
+  width: auto;
+}
+
+.nav-links a,
+.mobile-menu .menu-items a {
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  padding: 8px 12px;
+  display: block;
+}
+
+.social-icons img {
+  height: 25px;
+  margin-left: 10px;
+}
+
+/* Desktop Menu */
+.desktop-menu {
+  display: flex;
+  gap: 20px;
+}
+
+.desktop-social {
+  display: flex;
+}
+
+/* Hide mobile by default */
+.mobile-menu {
+  display: none;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .desktop-menu,
+  .desktop-social {
+    display: none; /* Hide desktop menu + social icons */
+  }
+
+  .mobile-menu {
+    display: block;
+    position: relative;
+  }
+
+  .menu-toggle {
+    font-size: 28px;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .menu-items {
+    display: none;
+    flex-direction: column;
+    background: white;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    width: 200px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+  }
+
+  .menu-items.show {
+    display: flex;
+  }
+}
+</style>
+
+<script>
+const menuToggle = document.getElementById("menu-toggle");
+const menuItems = document.getElementById("menu-items");
+
+menuToggle.addEventListener("click", function() {
+  menuItems.classList.toggle("show");
+  if (menuItems.classList.contains("show")) {
+    menuToggle.textContent = "✖"; // Change to close icon
+  } else {
+    menuToggle.textContent = "☰"; // Back to hamburger
+  }
+});
+</script>
+
 
   <!-- About Header -->
   <section class="about-header">
@@ -828,9 +937,9 @@ document.querySelectorAll('.feature-card').forEach(card => {
     <div class="footer-col">
       <h4>Information</h4>
       <ul>
-        <li><a href="#">Help</a></li>
-        <li><a href="#">Categories</a></li>
-        <li><a href="#">Featured Vacancies</a></li>
+          <li><a href="./contact.html">Help</a></li>
+        <li><a href="./services.html">Categories</a></li>
+        <li><a href="./carrers1.html">Featured Vacancies</a></li>
         <!-- <li><a href="#">Cases</a></li> -->
         <li><!-- <a href="#">Support</a> --></li>
       </ul>
